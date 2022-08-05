@@ -8,7 +8,7 @@ module.exports=(err,req,res,next)=>{
      if(err.name==="CastError")
      {
          const message=`Resource not found. Invalid:${err.path}`;
-         err=new ErrorHander(message,400);
+         err=new ErrorHandler(message,400);
      }
 
     res.status(err.statusCode).json({

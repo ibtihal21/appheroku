@@ -22,7 +22,7 @@ exports.getAllProducts=catchAsyncErrors(async(req,res)=>{
 
 // Update Product -- Admin
 exports.updateProduct=catchAsyncErrors(async(req,res,next)=>{
-    let product=await Product.findById(req.param.id);
+    let product=await Product.findById(req.params.id);
 
 
     if(!product)
