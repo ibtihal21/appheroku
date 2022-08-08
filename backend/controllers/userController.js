@@ -15,8 +15,8 @@ exports.registerUser=catchAsyncErrors(async (req,res,next)=>{
             url:"profilepicUrl",
         },
         });
-      
         sendToken(user,201,res);
+
         
 
 });
