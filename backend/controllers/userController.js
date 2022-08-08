@@ -30,7 +30,7 @@ exports.loginUser=catchAsyncErrors(async(req,res,next)=>{
 
     //checking if user has given password and email both
 
-    if(email || password)
+    if(!email || !password)
     {
         return next(new ErrorHander("Please Enter Email & Password",400));
     }
@@ -42,7 +42,7 @@ exports.loginUser=catchAsyncErrors(async(req,res,next)=>{
     }
 
     //check passwrod of user (matched or not)
-    const isPasswordMatched=user.comparePassword(password);
+    const isPasswordMatched= await user.comparePassword(password);
 
     if(!isPasswordMatched){
         return next(new ErrorHander("Invalid email or password",401));

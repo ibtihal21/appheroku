@@ -74,7 +74,7 @@ userSchema.methods.getJWTToken=function(){
 
 
 //compare password
-userSchema.method.comparePassword=async function(enteredPassword){
-    return await bcrypt.compare(enteredPassword,this.password);
+userSchema.methods.comparePassword=async function(password_pass){
+    return await bcrypt.compare(password_pass,this.password);
 };
 module.exports=mongoose.model("user",userSchema)
