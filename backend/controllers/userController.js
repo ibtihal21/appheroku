@@ -51,7 +51,7 @@ exports.loginUser=catchAsyncErrors(async(req,res,next)=>{
 
 //logout user
 exports.logout=catchAsyncErrors(async(req,res,next)=>{
-    req.cookie("token",null,{
+    res.cookie("token",null,{
         expires:new Date(Date.now()),
         httpOnly:true,
     });
@@ -59,4 +59,4 @@ exports.logout=catchAsyncErrors(async(req,res,next)=>{
         success:true,
         message:"Logged Out",
     });
-});
+});   

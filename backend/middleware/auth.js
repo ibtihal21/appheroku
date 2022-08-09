@@ -3,7 +3,7 @@ const User = require("../models/userModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("./catchAsyncErrors");
 
-const isAuthenticatedUser=catchAsyncErrors(async(req,res,next)=>
+ exports.isAuthenticatedUser=catchAsyncErrors(async(req,res,next)=>
 {
     const {token}=req.cookies;
     
@@ -18,4 +18,17 @@ const isAuthenticatedUser=catchAsyncErrors(async(req,res,next)=>
     next();
 });
 
-module.exports=isAuthenticatedUser;
+exports.authorizeRoles=(...roles)=>{
+    return (req,res,next)=>{
+        if(!roles.includes(req.user.role))
+            {
+                return  next(
+                new ErrorHander(
+                    `Role:${req.user.role} is not allowed to access the resource`,
+                     403 
+                )
+                   );
+            }
+            next();
+    };
+};
