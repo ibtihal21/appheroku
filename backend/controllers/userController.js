@@ -60,3 +60,16 @@ exports.logout=catchAsyncErrors(async(req,res,next)=>{
         message:"Logged Out",
     });
 });   
+
+// Forgot Password
+exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
+    const user = await User.findOne({email:req.body.email});
+
+    if(!user){
+        return next(new ErrorHander("User not found",404));
+
+    }
+
+    //Get resetPassword Token
+    const resetToken= user.getResetPasswordToken();
+});
