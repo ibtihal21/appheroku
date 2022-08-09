@@ -80,6 +80,13 @@ const productSchema= new mongoose.Schema({
     }
    ],
 
+   //kisne bnaya
+   user:{
+    type:mongoose.Schema.ObjectId,
+    ref:"user",
+    required:true,
+   },
+
 //date of creation of product
    createdAt:{
     type:Date,
