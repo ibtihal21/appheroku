@@ -2,6 +2,8 @@ const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User=require("../models/userModel");
 const sendToken=require("../utils/jwToken");
+const sendEmail=require("../utils/sendEmail");
+
 //Register a user
 exports.registerUser=catchAsyncErrors(async (req,res,next)=>{
     const {name,email,password}=req.body;
@@ -72,4 +74,36 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
 
     //Get resetPassword Token
     const resetToken= user.getResetPasswordToken();
+    await user.save({validateBeforeSave:false});
+
+    //yaha url banega and message me jaega user ke phir user us url ka use ker ke password reset ker sakega
+    const resetPasswordUrl=`${req.protocol}://${req.get(
+        "host"
+
+    )}/api/v1/password/reset/${resetToken}`; //localhost ka id de diya hai
+
+    // this message will send to users email for reset password
+    const message=`Your password rest token is :- \n\n ${resetPasswordUrl} \n\n If you have not requested this mail then, please ignore it`;
+
+    
+    try{
+
+        await sendEmail({
+            email:user.email,
+            subejct:`Ecommerce Password Recovery`,
+            message,
+        });
+        res.status(200).json({
+            success:true,
+            message:`Email sent to ${user.email} successfully`,
+        });
+    }catch(error)
+    {
+        user.resetPasswordToken=undefined;
+        user.resetPasswordExpire=undefined;
+
+        await user.save({validateBeforeSave:false});
+
+        return next(new ErrorHander(error.message,500));
+    }
 });
