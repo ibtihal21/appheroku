@@ -22,9 +22,18 @@ module.exports=(err,req,res,next)=>{
      //wrong json web token
      if(err.name=="JsonWebTokenError")
      {
-        const message=`Json Web Token is Invalid,Try Again`;
+        const message=`Json Web Token is Invalid, Try Again`;
         err=new ErrorHandler(message,400);
      }
+
+     //JWT Expire error
+     if(err.name=="TokenExpireError")
+     {
+        const message=`Json web Token is Expired, Try Again`;
+        err=new ErrorHandler(message,400);
+     }
+
+     
     res.status(err.statusCode).json({
         success:false,
         message:err.message,
