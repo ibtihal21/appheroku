@@ -193,3 +193,14 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
         success:true,
     });
   });
+
+  //Get all users(admin)
+  exports.getAllUser=catchAsyncErrors(async(req,res,next)=>{
+    const users=await User.find();
+
+    res.status(200).json({
+        success:true,
+        users,
+    });
+  });
+  
