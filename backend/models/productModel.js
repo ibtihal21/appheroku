@@ -66,7 +66,7 @@ const productSchema= new mongoose.Schema({
     {
         user:{
             type:mongoose.Schema.ObjectId,
-            ref:"user",
+            ref:"User",
             required:true,
            },
         name:{
@@ -88,7 +88,7 @@ const productSchema= new mongoose.Schema({
    //kisne bnaya
    user:{
     type:mongoose.Schema.ObjectId,
-    ref:"user",
+    ref:"User",
     required:true,
    },
 
