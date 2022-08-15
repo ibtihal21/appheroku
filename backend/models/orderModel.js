@@ -83,5 +83,17 @@ const oderSchema=new mongoose.Schema({
         type:Number,
         default:0,
     },
-    
+
+    taxPrice:{
+        type:Number,
+        default:0,
+    },
+    shippingPrice:{
+        type:Number,
+        default:0,
+    },
+    totalPrice:{
+        type:Number,
+        default:0,
+    },
 });
