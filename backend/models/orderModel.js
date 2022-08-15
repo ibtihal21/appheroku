@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 
-const oderSchema=new mongoose.Schema({
+const orderSchema=new mongoose.Schema({
     shippingInfo:{
       address:{
         type:String,
@@ -111,3 +111,5 @@ const oderSchema=new mongoose.Schema({
         default:Date.now,
     },
 });
+
+module.exports=mongoose.model("Order",orderSchema);
