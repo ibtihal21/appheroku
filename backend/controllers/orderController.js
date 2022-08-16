@@ -87,13 +87,15 @@ exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
     if(order.orderStatus==="Delivered"){
         return next(new ErrorHander("You have already recieved this order",404));
     }
-        order.orderItems.forEach((order)=>{
+        order.orderItems.forEach(async(order)=>{
           await updateStock(order.Product,order.quantity);
 
         });
 
+        //order ka status bta diya idhar
         order.orderStatus=req.body.status;
-
+        
+        //delivered ker diya hai to date ko bhi bta denge
         if(req.body.status==="Delivered"){
             order.deliveredAt=Date.now();
         }
@@ -104,6 +106,7 @@ exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
        
 });
 
+//this function is used to update the stock of product
 async function updateStock(id,quantity){
     const product=await Product.findById(id);
 
