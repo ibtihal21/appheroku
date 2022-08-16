@@ -1,4 +1,6 @@
 const mongoose=require("mongoose");
+const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const ErrorHander = require("../utils/errorhander");
 
 const orderSchema=new mongoose.Schema({
     shippingInfo:{
@@ -111,5 +113,25 @@ const orderSchema=new mongoose.Schema({
         default:Date.now,
     },
 });
+
+//get single order
+exports.getSingleOrder=catchAsyncErrors(async(req,res,next)=>{
+    //
+    const order =await Order.findById(req.params.id).populate(
+        "user",
+        "name email"
+    );
+
+    if(!order){
+        return next(new ErrorHander("Order not found with this Id",404));
+
+    };
+
+    res.status(200).json({
+        success:true,
+        order,
+    });
+});
+
 
 module.exports=mongoose.model("Order",orderSchema);
