@@ -133,5 +133,15 @@ exports.getSingleOrder=catchAsyncErrors(async(req,res,next)=>{
     });
 });
 
+//get logged in user orders
+exports.myOrders=catchAsyncErrors(async(req,res,next)=>{
+    const orders=await Order.find({user:req.user._id});
+
+    res.status(200).json({
+        success:true,
+        orders,
+    })
+       
+})
 
 module.exports=mongoose.model("Order",orderSchema);
