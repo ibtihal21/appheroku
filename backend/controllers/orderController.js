@@ -62,3 +62,20 @@ exports.myOrders=catchAsyncErrors(async(req,res,next)=>{
     });
        
 });
+
+
+//get all orders -- Admin
+exports.getAllOrders=catchAsyncErrors(async(req,res,next)=>{
+    const orders=await Order.find();
+
+    //admin will calculate total amount with orders
+    let totalAmount=0;
+    orders.forEach((order)=>{
+        totalAmount+=order.totalPrice;
+    });
+    res.status(200).json({
+        success:true,
+        orders,
+    });
+       
+});
