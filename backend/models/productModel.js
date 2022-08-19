@@ -80,9 +80,9 @@ const productSchema= new mongoose.Schema({
         comment:{
             type:String,
             required:true
-        }
+        },
 
-    }
+    },
    ],
 
    //kisne bnaya
