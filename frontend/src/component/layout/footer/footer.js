@@ -1,7 +1,8 @@
 import React from 'react'
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
-import "Footer.css";
+import "./Footer.css";
+
 const footer = () => {
   return (
     <footer id='footer'>
@@ -19,6 +20,7 @@ const footer = () => {
 
       <div class="rightFooter">
         <h4>Follow Us</h4>
+        {/* link will add here (fb,insta etc); */}
       </div>
 
     </footer>
