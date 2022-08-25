@@ -3,6 +3,7 @@ import{
     ALL_PRODCUT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
+    CLEAR_ERRORS,
 }from "../constants/productConstants";
 
 export const productReducer=
@@ -25,6 +26,11 @@ export const productReducer=
                         loading:false,
                         error:action.payload,
                     };
+                    case CLEAR_ERRORS:
+                        return{
+                            ...state,
+                            error:null,
+                        };
                     default:
                         return state;
     }
