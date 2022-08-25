@@ -1,14 +1,13 @@
-import { Action } from "history";
 import{
-    ALL_PRODCUT_FAIL,
+    ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
     CLEAR_ERRORS,
 }from "../constants/productConstants";
 
 export const productReducer=
-((state={products:[]}),
-(action)=>{
+(state={products:[]},
+action)=>{
     switch(action.type){
         case ALL_PRODUCT_REQUEST:
             return{
@@ -21,7 +20,7 @@ export const productReducer=
                     product:action.payload.products,
                     productsCount:action.payload.productsCount,
                 };
-                case ALL_PRODCUT_FAIL:
+                case ALL_PRODUCT_FAIL:
                     return{
                         loading:false,
                         error:action.payload,
@@ -34,4 +33,4 @@ export const productReducer=
                     default:
                         return state;
     }
-});
+}
