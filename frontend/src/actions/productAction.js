@@ -13,7 +13,7 @@ export const getProduct = ()=>async(dispatch)=>{
 
         dispatch({
             type:ALL_PRODUCT_SUCCESS,
-            payload,
+            payload:data,
         })
     }catch(error){
         dispatch({
@@ -22,3 +22,8 @@ export const getProduct = ()=>async(dispatch)=>{
         });
     }
 };
+
+//clearing Errors
+export const clearErrors=()=>async(dispatch)=>{
+    dispatch({type:CLEAR_ERRORS});
+}
