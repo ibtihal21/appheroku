@@ -7,12 +7,14 @@ import { getProduct } from '../../actions/productAction';
 import {useSelector,useDispatch} from "react-redux";
 
 //product details export to product.js
-const product={
-  name:"White Shirt",
-  images:[{url:"https://i.ibb.co/DRST11n/1.webp"}],
-  price:"$20",
-  _id:"nothing",
-};
+//product ka object bnaya tha ab eska koi kam nahi hai
+//pahle 8 products esi se bnaya tha
+// const product={
+//   name:"White Shirt",
+//   images:[{url:"https://i.ibb.co/DRST11n/1.webp"}],
+//   price:"$20",
+//   _id:"nothing",
+// };
 const Home = () => {
   const dispatch=useDispatch();
   const {loading,error,products,productsCount}=useSelector(
