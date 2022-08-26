@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import{
-    ALL_PRODCUT_FAIL,
+    ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
     CLEAR_ERRORS,
@@ -14,10 +14,10 @@ export const getProduct = ()=>async(dispatch)=>{
         dispatch({
             type:ALL_PRODUCT_SUCCESS,
             payload:data,
-        })
+        });
     }catch(error){
         dispatch({
-            type:ALL_PRODCUT_FAIL,
+            type:ALL_PRODUCT_FAIL,
             payload:error.respose.data.message,
         });
     }
@@ -26,4 +26,4 @@ export const getProduct = ()=>async(dispatch)=>{
 //clearing Errors
 export const clearErrors=()=>async(dispatch)=>{
     dispatch({type:CLEAR_ERRORS});
-}
+};

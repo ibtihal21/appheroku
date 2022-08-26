@@ -5,7 +5,7 @@ import{
     CLEAR_ERRORS,
 }from "../constants/productConstants";
 
-export const productReducer=
+export const productsReducer=
 (state={products:[]},
 action)=>{
     switch(action.type){
