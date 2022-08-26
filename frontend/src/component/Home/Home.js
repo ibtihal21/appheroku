@@ -41,15 +41,9 @@ const Home = () => {
         <h2 className='homeHeading'>Featured Products</h2>
 
         <div className='container ' id="container">
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-          <Product product={product}/>
-
+          {/* products ko map use ker ke kam ker rahe hai pahle alag alag likha tha */}
+          {products && products.map((product)=><Product product={product}/>)}
+          
         </div>
     </Fragment>
   );
