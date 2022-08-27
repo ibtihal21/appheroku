@@ -43,7 +43,7 @@ const Home = () => {
                         Scroll <CgMouse/>
                     </button>
                 </a>
-            </div>;
+            </div>
     
             <h2 className='homeHeading'>Featured Products</h2>
     
