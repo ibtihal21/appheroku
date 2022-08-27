@@ -5,6 +5,7 @@ import Product from "./Product.js";
 import Metadata from '../layout/Metadata';
 import { getProduct } from '../../actions/productAction';
 import {useSelector,useDispatch} from "react-redux";
+import Loader from '../layout/Loader/Loader';
 
 //product details export to product.js
 //product ka object bnaya tha ab eska koi kam nahi hai
@@ -29,7 +30,7 @@ const Home = () => {
   return (
   
     <Fragment>
-      {loading?("loading"):(
+      {loading?(<Loader/>):(
           <Fragment>
           {/* PROJECT KA TITLE UPER DIKHEGA */}
           <Metadata title="SUPERSHOP"/> 
@@ -42,17 +43,19 @@ const Home = () => {
                         Scroll <CgMouse/>
                     </button>
                 </a>
-            </div>
+            </div>;
     
             <h2 className='homeHeading'>Featured Products</h2>
     
             <div className='container ' id="container">
               {/* products ko map use ker ke kam ker rahe hai pahle alag alag likha tha */}
-              {products && products.map((product)=><Product product={product}/>)}
+              {
+              products && products.map((product)=><Product product={product}/>
+              )}
               
             </div>
         </Fragment>
-      )}
+     ) }
     </Fragment>
   );
 };
