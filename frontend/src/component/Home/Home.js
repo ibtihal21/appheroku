@@ -54,8 +54,7 @@ const Home = () => {
               )}
               
             </div>
-        </Fragment>
-     ) }
+        </Fragment>)}
     </Fragment>
   );
 };
