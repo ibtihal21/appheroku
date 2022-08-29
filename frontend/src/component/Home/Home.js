@@ -30,11 +30,13 @@ const Home = () => {
   return (
   
     <Fragment>
-      {loading?(<Loader/>):(
+      {loading?(
+      <Loader/>
+      ):(
           <Fragment>
           {/* PROJECT KA TITLE UPER DIKHEGA */}
           <Metadata title="SUPERSHOP"/> 
-            <div className='banner'>
+            <div className="banner">
                 <p>WELCOME TO SUPERSHOP</p>
                 <h1>Find Amazing Products</h1>
     
