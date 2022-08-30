@@ -6,7 +6,7 @@ import Metadata from '../layout/Metadata';
 import { getProduct } from '../../actions/productAction';
 import {useSelector,useDispatch} from "react-redux";
 import Loader from '../layout/Loader/Loader';
-
+import { useAlert } from 'react-alert';
 //product details export to product.js
 //product ka object bnaya tha ab eska koi kam nahi hai
 //pahle 8 products esi se bnaya tha
@@ -18,14 +18,19 @@ import Loader from '../layout/Loader/Loader';
 //   _id:"nothing",
 // };
 const Home = () => {
+  const alert=useAlert();
   const dispatch=useDispatch();
   const {loading,error,products,productsCount}=useSelector(
     (state)=>state.products
   );
 
   useEffect(()=>{
+    if(error)
+    {
+      return alert.error(error);
+    }
     dispatch(getProduct());
-  },[dispatch]);
+  },[dispatch,error]);
   
   return (
   
@@ -52,7 +57,7 @@ const Home = () => {
             <div className='container ' id="container">
               {/* products ko map use ker ke kam ker rahe hai pahle alag alag likha tha */}
               {
-              products && products.map((product)=><Product product={product}/>
+              products && products.map((product)=><Product key={product._id} product={product}/>
               )}
               
             </div>
