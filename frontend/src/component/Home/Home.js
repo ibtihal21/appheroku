@@ -11,16 +11,11 @@ import { useAlert } from 'react-alert';
 //product ka object bnaya tha ab eska koi kam nahi hai
 //pahle 8 products esi se bnaya tha
 
-// const product={
-//   name:"White Shirt",
-//   images:[{url:"https://i.ibb.co/DRST11n/1.webp"}],
-//   price:"$20",
-//   _id:"nothing",
-// };
+
 const Home = () => {
   const alert=useAlert();
   const dispatch=useDispatch();
-  const {loading,error,products,productsCount}=useSelector(
+  const {loading,error,products}=useSelector(
     (state)=>state.products
   );
 
@@ -30,7 +25,7 @@ const Home = () => {
       return alert.error(error);
     }
     dispatch(getProduct());
-  },[dispatch,error]);
+  },[dispatch,error,alert]);
   
   return (
   

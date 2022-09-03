@@ -40,7 +40,7 @@ action)=>{
 
 
 export const productDetailsReducer=
-(state={products:[]},
+(state={product:{}},
 action)=>{
     switch(action.type){
         case PRODUCT_DETAILS_REQUEST:
@@ -51,7 +51,7 @@ action)=>{
             case PRODUCT_DETAILS_SUCCESS:
                 return{
                     loading:false,
-                    products:action.payload,
+                    product:action.payload.product,
                 };
                 case PRODUCT_DETAILS_FAIL:
                     return{
