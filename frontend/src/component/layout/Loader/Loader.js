@@ -5,7 +5,7 @@ const Loader = () => {
     <div className='loading'>
     <div></div>
     </div>
-  )
-}
+  );
+};
 
 export default Loader

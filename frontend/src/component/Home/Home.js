@@ -40,16 +40,16 @@ const Home = () => {
                 <p>WELCOME TO SUPERSHOP</p>
                 <h1>Find Amazing Products</h1>
     
-                <a href='#container'>
+                <a href="#container">
                     <button>
                         Scroll <CgMouse/>
                     </button>
                 </a>
             </div>
     
-            <h2 className='homeHeading'>Featured Products</h2>
+            <h2 className="homeHeading">Featured Products</h2>
     
-            <div className='container ' id="container">
+            <div className="container " id="container">
               {/* products ko map use ker ke kam ker rahe hai pahle alag alag likha tha */}
               {
               products && products.map((product)=><Product key={product._id} product={product}/>

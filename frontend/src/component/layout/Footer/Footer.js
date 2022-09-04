@@ -3,7 +3,7 @@ import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import "./Footer.css";
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer id='footer'>
       <div className="leftFooter">
@@ -24,7 +24,7 @@ const footer = () => {
       </div>
 
     </footer>
-  )
-}
+  );
+};
 
-export default footer
+export default Footer
