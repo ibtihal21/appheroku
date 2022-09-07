@@ -14,11 +14,11 @@ exports.createProduct=catchAsyncErrors(async(req,res,next)=>{
 });
 
 //Get all products
-exports.getAllProducts=catchAsyncErrors(async(req,res)=>{
+exports.getAllProducts=catchAsyncErrors(async(req,res,next)=>{
     
     //ek page pe kitna data chaiye
-    const resultPerPage=5;
-    const productCount=await Product.countDocuments();
+    const resultPerPage=8;
+    const productsCount=await Product.countDocuments();
     const apiFeature=new ApiFeatures(Product.find(),req.query)
     .search()
     .filter()
@@ -28,10 +28,35 @@ exports.getAllProducts=catchAsyncErrors(async(req,res)=>{
     res.status(200).json({
         success:true,
         products,
-        productCount
-
+        productsCount,
+        resultPerPage,
     });
 });
+
+// Get All Product (Admin)
+exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
+    const products = await Product.find();
+  
+    res.status(200).json({
+      success: true,
+      products,
+    });
+  });
+
+//GET a single PRODUCT DETAILS
+exports.getProductDetails=catchAsyncErrors(async(req,res,next)=>{
+    const product=await Product.findById(req.params.id);
+    if(!product){
+        return next(new ErrorHander("Product not found",404));
+        }
+    
+    
+    res.status(200).json({
+        success:true,
+        product,
+    });
+});
+
 
 // Update Product -- Admin
 exports.updateProduct=catchAsyncErrors(async(req,res,next)=>{
@@ -52,7 +77,7 @@ exports.updateProduct=catchAsyncErrors(async(req,res,next)=>{
 
     res.status(200).json({
         success:true,
-        product
+        product,
     });
 });
 
@@ -70,24 +95,11 @@ exports.deleteProduct=catchAsyncErrors(async(req,res,next)=>{
 
     res.status(200).json({
         success:true,
-        message:"Product deleted successfully"
+        message:"Product deleted successfully",
     });
 
 });
 
-//GET a single PRODUCT DETAILS
-exports.getProductDetails=catchAsyncErrors(async(req,res,next)=>{
-    const product=await Product.findById(req.params.id);
-    if(!product){
-        return next(new ErrorHander("Product not found",404));
-        }
-    
-    
-    res.status(200).json({
-        success:true,
-        product
-    });
-});
 
 // Create New Review or update the Review
 exports.createProductReview=catchAsyncErrors(async(req,res,next)=>

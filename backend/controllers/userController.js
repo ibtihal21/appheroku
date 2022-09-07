@@ -1,7 +1,7 @@
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User=require("../models/userModel");
-const sendToken=require("../utils/jwToken");
+const sendToken=require("../utils/jwtToken");
 const sendEmail=require("../utils/sendEmail");
 const crypto=require("crypto");
 
@@ -229,7 +229,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
         role:req.body.role,
     };
 
-    const user=await User.findByIdAndUpdate(req.params.id,newUserData,{
+    await User.findByIdAndUpdate(req.params.id,newUserData,{
         new:true,
         runValidators:true,
         userFindAndModify:false,
@@ -243,7 +243,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   //Delete user Role--Admin
   exports.deleteUser=catchAsyncErrors(async(req,res,next)=>{
     
-    const user=await User.findByIdAndUpdate(req.params.id)
+    const user=await User.findById(req.params.id)
     //we  will remove cloudinary later
 
     if(!user){
