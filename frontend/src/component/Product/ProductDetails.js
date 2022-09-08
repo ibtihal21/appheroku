@@ -3,12 +3,14 @@ import  Carousel  from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector,useDispatch } from 'react-redux';
 import { getProductDetails } from '../../actions/productAction';
+import MetaData from "../layout/Metadata";
+
 import ReactStars from "react-rating-stars-component";
 const ProductDetails = ({match}) => {
   
     const dispatch=useDispatch();
 
-    const {product}=useSelector(
+    const {product,loading,}=useSelector(
         (state)=>state.productDetails
     );
     useEffect(()=>
@@ -27,13 +29,14 @@ const ProductDetails = ({match}) => {
 
     return (
     <Fragment>
+        <MetaData title={`${product.name} -- ECOMMERCE`}/>
         <div className='ProductDetails'>
             <div>
                 <Carousel>
                     {product.images && product.images.map((item,i)=>
                      (<img
                       className='CaroselImage'
-                      key={item.url}
+                      key={i}
                       src={item.url}
                       alt={`${i}Slide`}
                       />
