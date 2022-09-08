@@ -9,10 +9,10 @@ import{
     PRODUCT_DETAILS_SUCCESS,
     CLEAR_ERRORS,
 }from "../constants/productConstants";
-export const getProduct = ()=>async(dispatch)=>{
+export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0)=>async(dispatch)=>{
     try{
         dispatch({type:ALL_PRODUCT_REQUEST});
-        const {data}=await axios.get("/api/v1/products");
+        const {data}=await axios.get(`/api/v1/products`);
 
         dispatch({
             type:ALL_PRODUCT_SUCCESS,

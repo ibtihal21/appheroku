@@ -25,12 +25,14 @@ const options = {
   nav4justifyContent: "flex-start",
   link1ColorHover: "#eb4034",
   link1Margin: "1vmax",
-  profileIconColor: "rgba(38, 35, 35,0.8)",
+  profileIconUrl: "/login",
+  profileIconColor: "rgba(35, 35, 35,0.8)",
   searchIconColor: "rgba(35, 35, 35,0.8)",
   cartIconColor: "rgba(35, 35, 35,0.8)",
-  profileIconColorHover:"#eb4034",
+  profileIconColorHover: "#eb4034",
   searchIconColorHover: "#eb4034",
   cartIconColorHover: "#eb4034",
+  cartIconMargin: "1vmax",
 };
 
 const Header = () => {
