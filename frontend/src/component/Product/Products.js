@@ -66,7 +66,7 @@ const Products = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="PRODUCTS -- ECOMMERCE" />
+          <MetaData title="PRODUCTS -- SUPERSHOP" />
           <h2 className="productsHeading">Products</h2>
 
           <div className="products">
@@ -84,7 +84,7 @@ const Products = ({ match }) => {
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={25000}
+              max={40000}
             />
 
             <Typography>Categories</Typography>
