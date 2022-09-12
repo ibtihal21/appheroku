@@ -36,6 +36,7 @@ const Profile = ({ history }) => {
                 <p>{user.email}</p>
               </div>
               <div>
+                {/* it will show the date when user register */}
                 <h4>Joined On</h4>
                 <p>{String(user.createdAt).substr(0, 10)}</p>
               </div>

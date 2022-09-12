@@ -88,8 +88,9 @@
   margin: 1vmax 0;
 }
 
+/* myorder and change pass wale me hover lagaya hai  */
 .profileContainer > div:last-child > div:last-child > a:hover {
-  background-color: rgb(31, 31, 31);
+  background-color: #39ad27;
 }
 
 @media screen and (max-width: 600px) {
