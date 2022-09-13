@@ -99,7 +99,7 @@ exports.forgotPassword=catchAsyncErrors(async(req,res,next)=>{
 
         await sendEmail({
             email:user.email,
-            subejct:`Ecommerce Password Recovery`,
+            subejct:`SuperShop Password Recovery`,
             message,
         });
         res.status(200).json({
