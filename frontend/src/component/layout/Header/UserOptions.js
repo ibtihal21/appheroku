@@ -25,8 +25,10 @@ const UserOptions = ({ user }) => {
     { icon: <PersonIcon />, name: "Profile", func: account },
     {
       icon: (
+        
         <ShoppingCartIcon
-          style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
+        //cart me elements hone pe green rahega warna light black
+          style={{ color: cartItems.length > 0 ? "green" : "unset" }}
         />
       ),
       name: `Cart(${cartItems.length})`,
