@@ -15,7 +15,7 @@ process.on("uncaughtException",err=>{
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {
 
-dotenv.config({path:"backend/config/config.env"});
+require("dotenv").config({path:"backend/config/config.env"});
 }
 
 //connecting to databse
