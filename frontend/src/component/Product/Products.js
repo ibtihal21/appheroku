@@ -8,14 +8,14 @@ import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
-import MetaData from "../layout/MetaData";
+import MetaData from "../layout/Metadata";
 
 const categories = [
   "Laptop",
-  "Footwear",
-  "Bottom",
-  "Tops",
-  "Attire",
+  "TV",
+  "Washing machine",
+  "Refrigator",
+  "Headphones",
   "Camera",
   "SmartPhones",
 ];

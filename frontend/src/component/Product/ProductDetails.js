@@ -10,7 +10,7 @@ import {
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
-import MetaData from "../layout/MetaData";
+import MetaData from "../layout/Metadata";
 import { addItemsToCart } from "../../actions/cartAction";
 import {
   Dialog,

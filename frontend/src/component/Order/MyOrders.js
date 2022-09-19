@@ -7,7 +7,7 @@ import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
-import MetaData from "../layout/MetaData";
+import MetaData from "../layout/Metadata";
 import LaunchIcon from "@material-ui/icons/Launch";
 
 const MyOrders = () => {

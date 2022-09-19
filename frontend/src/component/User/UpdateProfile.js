@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updateProfile, loadUser } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
-import MetaData from "../layout/MetaData";
+import MetaData from "../layout/Metadata";
 
 const UpdateProfile = ({ history }) => {
   const dispatch = useDispatch();
