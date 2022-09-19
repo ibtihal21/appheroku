@@ -29,7 +29,7 @@ const NewProduct = ({ history }) => {
 
   const categories = [
     "Laptop",
-    "Keyboards",
+    "TV",
     "Headphones",
     "Washing machine",
     "Refrigerator",
