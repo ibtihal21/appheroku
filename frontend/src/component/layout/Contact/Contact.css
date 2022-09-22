@@ -4,9 +4,10 @@
   max-width: 100%;
   display: grid;
   place-items: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   position: fixed;
 }
+
 
 .mailBtn {
   text-decoration: none;
@@ -15,14 +16,41 @@
 }
 
 .mailBtn > button {
+
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+
+  text-decoration-color: red;
   font: 200 2vmax "Roboto";
   cursor: url("https://img.icons8.com/color/48/000000/edit--v2.png"), pointer;
   padding: 2vmax;
 }
+
+.mailBtn > button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.mailBtn > button:hover span {
+  padding-right: 25px;
+  background-color: rgb(255, 51, 0);
+
+}
+
+
 
 @keyframes mailBtnAnimation {
   to {
     transform: translateX(0);
   }
 }
+

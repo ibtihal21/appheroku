@@ -61,12 +61,15 @@ function App() {
       },
     });
 
-    store.dispatch(loadUser());
+    if(isAuthenticated)
+    {
+      store.dispatch(loadUser());
+    }
 
     getStripeApiKey();
   }, []);
 
-  window.addEventListener("contextmenu", (e) => e.preventDefault());
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (
     <Router>

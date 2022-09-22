@@ -6,7 +6,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 const About = () => {
   const visitInstagram = () => {
     //put instagram link of supershop
-    window.location = "";
+    window.location = "https://www.instagram.com/__gauravjha__/";
   };
   return (
     <div className="aboutSection">
@@ -35,13 +35,13 @@ const About = () => {
             <Typography component="h2">Our Brands</Typography>
             <a
             //put utube link of supershop
-              href=""
+              href="https://www.youtube.com/channel/UCbpFB6_KJJPYKdgAwPgqJww"
               target="blank"
             >
               <YouTubeIcon className="youtubeSvgIcon" />
             </a>
-               {/* put insta link */}
-            <a href="" target="blank">
+               {/* put insta link */} 
+             <a href="https://www.instagram.com/__gauravjha__/" target="blank">
               <InstagramIcon className="instagramSvgIcon" />
             </a>
           </div>

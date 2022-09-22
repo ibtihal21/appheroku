@@ -19,7 +19,10 @@
   }
   
   .banner > p {
-    font: 300 1.4vmax "Lucida Sans";
+    
+    font: 300 1.9vmax "Lucida Sans";
+    text-decoration: underline overline dotted rgb(47, 0, 255);
+
   }
   
   .banner > a > button {

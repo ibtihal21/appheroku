@@ -4,7 +4,7 @@
   }
 
 body{
-  cursor: url("./images/cursor.png");
+  cursor: url("./images/cursor2.png"),auto;
 }
 
     /* Chrome, Safari, Edge, Opera */
@@ -25,3 +25,6 @@ input[type="number"] {
 .redColor {
   color: red !important;
 }
+
+
+

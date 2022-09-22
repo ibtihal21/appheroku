@@ -1,7 +1,7 @@
 import React from "react";
-// import {ReactNavbar} from "overlay-navbar";
+import { ReactNavbar } from "overlay-navbar";
 import logo from "../../../images/logo.png";
-var ReactNavbar = require('overlay-navbar');;
+
 const options = {
   burgerColorHover: "#eb4034",
   logo,
@@ -33,6 +33,7 @@ const options = {
   searchIconColorHover: "#eb4034",
   cartIconColorHover: "#eb4034",
   cartIconMargin: "1vmax",
+ 
 };
 
 const Header = () => {

@@ -43,16 +43,18 @@ exports.getAllProducts=catchAsyncErrors(async(req,res,next)=>{
     //ek page pe kitna data chaiye
     const resultPerPage=8;
     const productsCount=await Product.countDocuments();
-    const apiFeature=new ApiFeatures(Product.find(),req.query)
+    let products=await new ApiFeatures( Product.find(),req.query)
     .search()
     .filter();
 
-    let products = await apiFeature.query;
+    // let products = await apiFeature.query;
 
     let filteredProductsCount = products.length;
   
-    apiFeature.pagination(resultPerPage);
-    products=await apiFeature.query;
+    // apiFeature.pagination(resultPerPage);
+    products=await new ApiFeatures(Product.find(),req.query)
+    .search()
+    .filter().pagination(resultPerPage).query;
 
     res.status(200).json({
         success:true,
