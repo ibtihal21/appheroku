@@ -9,13 +9,14 @@ const catchAsyncErrors = require("./catchAsyncErrors");
     
     if(!token)
     {
-        return next(new ErrorHander("Please Login to access this resource",401));
+        return next(new ErrorHander("Please Login to access this resource",400));
     }
 
     const decodedData=jwt.verify(token,process.env.JWT_SECRET);
 
     req.user=await User.findById(decodedData.id);
     next();
+   
 });
 
 exports.authorizeRoles=(...roles)=>{

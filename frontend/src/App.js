@@ -69,6 +69,7 @@ function App() {
     getStripeApiKey();
   }, []);
 
+  // this is used to lock inspect
   // window.addEventListener("contextmenu", (e) => e.preventDefault());
 
   return (

@@ -41,11 +41,11 @@ exports.createProduct=catchAsyncErrors(async(req,res,next)=>{
 exports.getAllProducts=catchAsyncErrors(async(req,res,next)=>{
     
     //ek page pe kitna data chaiye
-    const resultPerPage=8;
+    const resultPerPage=4;
     const productsCount=await Product.countDocuments();
     let products=await new ApiFeatures( Product.find(),req.query)
     .search()
-    .filter();
+    .filter().query;
 
     // let products = await apiFeature.query;
 
@@ -54,7 +54,8 @@ exports.getAllProducts=catchAsyncErrors(async(req,res,next)=>{
     // apiFeature.pagination(resultPerPage);
     products=await new ApiFeatures(Product.find(),req.query)
     .search()
-    .filter().pagination(resultPerPage).query;
+    .filter()
+    .pagination(resultPerPage).query;
 
     res.status(200).json({
         success:true,
