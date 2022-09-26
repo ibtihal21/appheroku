@@ -11,8 +11,8 @@
 .aboutSectionGradient {
   background-image: linear-gradient(
     to bottom right,
-    rgb(78, 81, 255),
-    rgb(74, 137, 189)
+    rgb(78, 255, 214),
+    rgb(87, 74, 189)
   );
 }
 
@@ -33,14 +33,16 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: tomato;
+  color: rgb(189, 21, 223);
   margin: 2vmax;
 }
 
 .aboutSectionContainer > div {
   display: flex;
   width: 100%;
+  
 }
+
 
 .aboutSectionContainer > div > div {
   width: 100%;
@@ -87,6 +89,9 @@
 
 .instagramSvgIcon {
   color: rgb(144, 81, 202);
+}
+.linkedinSvgIcon{
+  color: rgb(19, 105, 166);
 }
 
 @media screen and (max-width: 600px) {
