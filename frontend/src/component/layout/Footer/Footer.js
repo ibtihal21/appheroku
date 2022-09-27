@@ -1,6 +1,9 @@
 import React from 'react'
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+
 import "./Footer.css";
 
 const Footer = () => {
@@ -20,7 +23,14 @@ const Footer = () => {
 
       <div className="rightFooter">
         <h4>Follow Us</h4>
-        {/* link will add here (fb,insta etc); */}
+        <a href="https://www.instagram.com/__gauravjha__/">
+
+        <InstagramIcon className="instagramSvgIcon" />
+
+        </a>
+        <a href="https://www.youtube.com/channel/UCbpFB6_KJJPYKdgAwPgqJww">
+        <YouTubeIcon className='utubeSvgIcon'/>
+        </a>
       </div>
 
     </footer>

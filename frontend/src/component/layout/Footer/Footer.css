@@ -72,3 +72,10 @@ footer {
 .rightFooter > a:hover {
   color: #eb4034;
 }
+
+.instagramSvgIcon {
+  color: rgb(144, 81, 202);
+}
+.utubeSvgIcon{
+  color: #eb4034;
+}
