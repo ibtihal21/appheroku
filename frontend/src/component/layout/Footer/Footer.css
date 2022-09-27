@@ -75,7 +75,13 @@ footer {
 
 .instagramSvgIcon {
   color: rgb(144, 81, 202);
+  font-size: large;
 }
 .utubeSvgIcon{
   color: #eb4034;
+  font-size: large;
+}
+.linkedinSvgIcon{
+  color: blue;
+  font-size: large;
 }

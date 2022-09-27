@@ -3,6 +3,7 @@ import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 import "./Footer.css";
 
@@ -24,12 +25,13 @@ const Footer = () => {
       <div className="rightFooter">
         <h4>Follow Us</h4>
         <a href="https://www.instagram.com/__gauravjha__/">
-
         <InstagramIcon className="instagramSvgIcon" />
-
         </a>
         <a href="https://www.youtube.com/channel/UCbpFB6_KJJPYKdgAwPgqJww">
         <YouTubeIcon className='utubeSvgIcon'/>
+        </a>
+        <a href="https://www.linkedin.com/in/gauravkumar44/">
+        <LinkedInIcon className='linkedSvgIcon'/>
         </a>
       </div>
 
