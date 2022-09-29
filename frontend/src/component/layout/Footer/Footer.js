@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="rightFooter">
         <h4>Follow Us</h4>
         <a href="https://www.instagram.com/__gauravjha__/">
-        <InstagramIcon className="instagramSvgIcon" />
+        <InstagramIcon  className="instagramSvgIcon" />
         </a>
         <a href="https://www.youtube.com/channel/UCbpFB6_KJJPYKdgAwPgqJww">
         <YouTubeIcon className='utubeSvgIcon'/>

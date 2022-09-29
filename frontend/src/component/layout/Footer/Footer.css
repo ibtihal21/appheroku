@@ -67,21 +67,17 @@ footer {
   color: white;
   transition: all 0.5s;
   margin: 0.5vmax;
-}
-
-.rightFooter > a:hover {
-  color: #eb4034;
+  
 }
 
 .instagramSvgIcon {
   color: rgb(144, 81, 202);
-  font-size: large;
+  font-size: 2vmax;
 }
 .utubeSvgIcon{
   color: #eb4034;
-  font-size: large;
+
 }
-.linkedinSvgIcon{
+.linkedSvgIcon{
   color: blue;
-  font-size: large;
 }

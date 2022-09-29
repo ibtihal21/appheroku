@@ -61,10 +61,9 @@ function App() {
       },
     });
 
-    if(isAuthenticated)
-    {
+    
       store.dispatch(loadUser());
-    }
+    
 
     getStripeApiKey();
   }, []);
