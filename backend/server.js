@@ -11,6 +11,7 @@ process.on("uncaughtException",err=>{
 });
 // console.log(youtube); ye uncaught exception ka example hai
 
+//localhost me condition nahi use kerte hai
 //config
 if (process.env.NODE_ENV !== "PRODUCTION") {
 
