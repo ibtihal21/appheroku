@@ -3,7 +3,7 @@ import { CgMouse } from "react-icons/all";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/Metadata";
-import { clearErrors, getProduct } from "../../actions/productAction";
+import { clearErrors, getAllProducts } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
@@ -18,8 +18,8 @@ const Home = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-    dispatch(getProduct());
-  }, [dispatch, error, alert]);
+    dispatch(getAllProducts());
+  }, [dispatch,error,alert]);
 
   return (
     <Fragment>
