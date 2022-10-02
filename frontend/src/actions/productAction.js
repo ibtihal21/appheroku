@@ -61,6 +61,8 @@ export const getAllProducts =
         type: ALL_PRODUCT_FAIL,
         payload: error.message,
       });
+
+      
     }
   };
 
