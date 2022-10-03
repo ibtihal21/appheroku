@@ -40,6 +40,8 @@ export const getAllProducts =
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
       let link = `/api/v1/products`;
+      // let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+
 
       if (  category &&
         category !== "All" &&

@@ -11,6 +11,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     require("dotenv").config({ path: "backend/config/config.env" });
   }
 
+
+  
 // This method is called as a middleware in an application using this code:-
 app.use(express.json())
 app.use(cookieParser())
