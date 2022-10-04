@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   }
 
 
-  
+
 // This method is called as a middleware in an application using this code:-
 app.use(express.json())
 app.use(cookieParser())

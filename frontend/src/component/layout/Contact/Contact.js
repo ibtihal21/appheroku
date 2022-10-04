@@ -1,9 +1,9 @@
 import React from "react";
 import "./Contact.css";
 import {Typography} from "@material-ui/core";
-import lmail from "@material-ui/icons/Email";
-import lphone from "@material-ui/icons/ContactPhone";
-import { HiGlobe, HiMail, HiPhone } from "react-icons/hi";
+// import lmail from "@material-ui/icons/Email";
+// import lphone from "@material-ui/icons/ContactPhone";
+import {HiMail} from "react-icons/hi";
 
 const Contact = () => {
   return (

@@ -1,13 +1,13 @@
 import React from "react";
 import "./aboutSection.css";
-import { Button, Typography, Avatar } from "@material-ui/core";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import LinkedinIcon from "@material-ui/icons/LinkedIn";
+import {Typography, Avatar } from "@material-ui/core";
+// import YouTubeIcon from "@material-ui/icons/YouTube";
+// import InstagramIcon from "@material-ui/icons/Instagram";
+// import LinkedinIcon from "@material-ui/icons/LinkedIn";
 const About = () => {
-  const visitInstagram = () => {
-    window.location = "https://www.instagram.com/__gauravjha__/";
-  };
+  // const visitInstagram = () => {
+  //   window.location = "https://www.instagram.com/__gauravjha__/";
+  // };
   return (
     <div className="aboutSection">
       <div></div>
