@@ -41,7 +41,7 @@ exports.createProduct=catchAsyncErrors(async(req,res,next)=>{
 exports.getAllProducts=catchAsyncErrors(async(req,res,next)=>{
     
     //ek page pe kitna data chaiye
-    const resultPerPage=2;
+    const resultPerPage=4;
     const productsCount=await Product.countDocuments();
     let products=await new ApiFeatures( Product.find(),req.query)
     .search()
