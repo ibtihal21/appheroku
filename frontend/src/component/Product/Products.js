@@ -10,6 +10,7 @@ import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/Metadata";
 
+
 const categories = [
   "Laptop",
   "TV",
@@ -26,7 +27,9 @@ const Products = ({ match }) => {
   const alert = useAlert();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([0, 25000]);
+  // const [price, setPrice] = useState([0, 500000]);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(500000);
   const [category, setCategory] = useState("");
 
   const [ratings, setRatings] = useState(0);
@@ -46,9 +49,9 @@ const Products = ({ match }) => {
     setCurrentPage(e);
   };
 
-  const priceHandler = (event, newPrice) => {
-    setPrice(newPrice);
-  };
+  // const priceHandler = (event, newPrice) => {
+  //   setPrice(newPrice);
+  // };
   let count = filteredProductsCount;
 
   useEffect(() => {
@@ -57,8 +60,8 @@ const Products = ({ match }) => {
       dispatch(clearErrors());
     }
 
-    dispatch(getAllProducts(keyword, currentPage, price, category, ratings));
-  }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
+    dispatch(getAllProducts(keyword, currentPage, minPrice,maxPrice, category, ratings));
+  }, [dispatch, keyword, currentPage, minPrice,maxPrice, category, ratings, alert, error]);
 
   return (
     <Fragment>
@@ -77,15 +80,49 @@ const Products = ({ match }) => {
           </div>
 
           <div className="filterBox">
-            <Typography>Price</Typography>
+            {/* <Typography>Price</Typography>
             <Slider
               value={price}
               onChange={priceHandler}
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={40000}
-            />
+              max={500000}
+            /> */}
+
+
+            <div className="price-filter">
+              <h2>Price</h2>
+
+              <div className="price-range-input">
+                <select
+                  onChange={(e) => setMinPrice(e.target.value)}
+                  value={minPrice}
+                >
+                  <option value="0">MIN</option>
+                  <option value="100">₹100</option>
+                  <option value="500">₹500</option>
+                  <option value="1000">₹1000</option>
+                  <option value="2000">₹2000</option>
+                </select>
+
+                <span>to</span>
+
+                <select
+                  onChange={(e) => setMaxPrice(e.target.value)}
+                  value={maxPrice}
+                >
+                  <option value="500000">MAX</option>
+                  <option value="100">₹100</option>
+                  <option value="500">₹500</option>
+                  <option value="1500">₹1500</option>
+                  <option value="2500">₹2500</option>
+                  <option value="5000">₹5000</option>
+                  <option value="10000">₹10000</option>
+                  <option value="500000">₹50000+</option>
+                </select>
+              </div>
+            </div>
 
             <Typography>Categories</Typography>
             <ul className="categoryBox">
@@ -100,7 +137,7 @@ const Products = ({ match }) => {
               ))}
             </ul>
 
-            <fieldset>
+            {/* <fieldset>
               <Typography component="legend">Ratings Above</Typography>
               <Slider
                 value={ratings}
@@ -112,7 +149,23 @@ const Products = ({ match }) => {
                 min={0}
                 max={5}
               />
-            </fieldset>
+            </fieldset> */}
+
+            <div className="rating-filter">
+              <h2>Ratings</h2>
+
+              <select
+                onChange={(e) => setRatings(e.target.value)}
+                value={ratings}
+              >
+                <option value="0">0★ & above</option>
+                <option value="4">4★ & above</option>
+                <option value="3">3★ & above</option>
+                <option value="2">2★ & above</option>
+                <option value="1">1★ & above</option>
+              </select>
+            </div>
+
           </div>
           {resultPerPage < count && (
             <div className="paginationBox">
