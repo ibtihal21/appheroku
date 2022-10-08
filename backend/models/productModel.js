@@ -23,7 +23,7 @@ const productSchema= mongoose.Schema({
 //product rating
    ratings:{
     type:Number,
-    default:0
+    default:0,
    },
 
 //product image
@@ -48,11 +48,11 @@ const productSchema= mongoose.Schema({
    },
 
 //product in stock
-   stock:{
+   Stock:{
     type:Number,
     required:[true,"Please enter product Stock"],
     maxLength:[4,"Stock cannot exceed 4 characters"],
-    default:1
+    default:1,
    },
 
 //total number of reviews of product

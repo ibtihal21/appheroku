@@ -90,7 +90,7 @@ const Products = ({ match }) => {
               max={500000}
             /> */}
 
-
+          
             <div className="price-filter">
               <h2>Price</h2>
 

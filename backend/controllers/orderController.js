@@ -118,8 +118,8 @@ exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
 async function updateStock(id,quantity){
     const product=await Product.findById(id);
 
-    //change S to s
-    product.stock -= quantity;
+    //change s to S now it is working in capital s
+    product.Stock -= quantity;
     await product.save({validateBeforeSave:false});
 }
 
