@@ -56,8 +56,8 @@ const Dashboard = () => {
     labels: ["Out of Stock", "InStock"],
     datasets: [
       {
-        backgroundColor: ["#00A6B4", "#6800B4"],
-        hoverBackgroundColor: ["#4B5000", "#35014F"],
+        backgroundColor: ["#ff0000", "#008000"],
+        hoverBackgroundColor: ["#4B5000", "#006400"],
         data: [outOfStock, products.length - outOfStock],
       },
     ],

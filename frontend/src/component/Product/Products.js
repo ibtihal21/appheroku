@@ -5,13 +5,13 @@ import { clearErrors, getAllProducts } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
-import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/Metadata";
 
 
 const categories = [
+  "All",
   "Laptop",
   "TV",
   "Washing machine",
@@ -80,17 +80,6 @@ const Products = ({ match }) => {
           </div>
 
           <div className="filterBox">
-            {/* <Typography>Price</Typography>
-            <Slider
-              value={price}
-              onChange={priceHandler}
-              valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
-              min={0}
-              max={500000}
-            /> */}
-
-          
             <div className="price-filter">
               <h2>Price</h2>
 
@@ -100,10 +89,10 @@ const Products = ({ match }) => {
                   value={minPrice}
                 >
                   <option value="0">MIN</option>
-                  <option value="100">₹100</option>
                   <option value="500">₹500</option>
                   <option value="1000">₹1000</option>
                   <option value="2000">₹2000</option>
+                  <option value="5000">₹5000</option>
                 </select>
 
                 <span>to</span>
@@ -113,13 +102,13 @@ const Products = ({ match }) => {
                   value={maxPrice}
                 >
                   <option value="500000">MAX</option>
-                  <option value="100">₹100</option>
-                  <option value="500">₹500</option>
-                  <option value="1500">₹1500</option>
-                  <option value="2500">₹2500</option>
+                  <option value="1000">₹1000</option>
+                  <option value="2000">₹2000</option>
+                  <option value="3000">₹3000</option>
                   <option value="5000">₹5000</option>
                   <option value="10000">₹10000</option>
-                  <option value="500000">₹50000+</option>
+                  <option value="20000">₹20000</option>
+                  <option value="50000">₹50000+</option>
                 </select>
               </div>
             </div>
@@ -137,20 +126,6 @@ const Products = ({ match }) => {
               ))}
             </ul>
 
-            {/* <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
-              <Slider
-                value={ratings}
-                onChange={(e, newRating) => {
-                  setRatings(newRating);
-                }}
-                aria-labelledby="continuous-slider"
-                valueLabelDisplay="auto"
-                min={0}
-                max={5}
-              />
-            </fieldset> */}
-
             <div className="rating-filter">
               <h2>Ratings</h2>
 
@@ -165,7 +140,6 @@ const Products = ({ match }) => {
                 <option value="1">1★ & above</option>
               </select>
             </div>
-
           </div>
           {resultPerPage < count && (
             <div className="paginationBox">
@@ -176,7 +150,7 @@ const Products = ({ match }) => {
                 onChange={setCurrentPageNo}
                 nextPageText="Next"
                 prevPageText="Prev"
-                firstPageText="1st"
+                firstPageText="First"
                 lastPageText="Last"
                 itemClass="page-item"
                 linkClass="page-link"
