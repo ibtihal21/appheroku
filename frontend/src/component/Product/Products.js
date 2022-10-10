@@ -113,8 +113,9 @@ const Products = ({ match }) => {
               </div>
             </div>
 
-            <Typography>Categories</Typography>
             <ul className="categoryBox">
+             <h2>Categories</h2>
+
               {categories.map((category) => (
                 <li
                   className="category-link"

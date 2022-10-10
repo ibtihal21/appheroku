@@ -16,7 +16,8 @@ const options={
 
   return (
     <Link className='productCard' to={`/product/${product._id}`}>
-        <img src={product.images[0]?.url} alt={product.name}/>
+      {/* in img .url se ? haata dea hai (ye hone pe bina photo ka bhi product aa jata ) */}
+        <img src={product.images[0].url} alt={product.name}/> 
         <p>{product.name}</p>
         <div>
           <Rating {...options} />{" "}
