@@ -19,12 +19,18 @@ import {
   DialogTitle,
   Button,
 } from "@material-ui/core";
+import {Redirect } from "react-router-dom";
+
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import { FaStar, FaCartPlus } from "react-icons/fa";
+import { MdFlashOn } from "react-icons/md";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  // const navigate = useNavigate();
+
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
@@ -63,6 +69,14 @@ const ProductDetails = ({ match }) => {
   const addToCartHandler = () => {
     dispatch(addItemsToCart(match.params.id, quantity));
     alert.success("Item Added To Cart");
+  };
+
+
+  //buy product at add to cart
+  const buyProductHandler = () => {
+    dispatch(addItemsToCart(match.params.id, quantity));
+    alert.success("Item Added To Cart");
+    return <Redirect to="/Cart/Cart"/>;
   };
 
   const submitReviewToggle = () => {
@@ -145,7 +159,14 @@ const ProductDetails = ({ match }) => {
                     disabled={product.Stock < 1 ? true : false}
                     onClick={addToCartHandler}
                   >
-                    Add to Cart
+                     <FaCartPlus />Add to Cart
+                  </button>
+                  <button
+                    // className="rounded-filled-btn buy-btn"
+                    disabled={product.Stock < 1 ? true : false}
+                    onClick={buyProductHandler}
+                  >
+                    <MdFlashOn /> Buy Now
                   </button>
                 </div>
 
