@@ -26,6 +26,21 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
+  const message = `Hello ${user.name},
+    \nWe're glad you're here! Check out our product collection and enjoy shopping.
+    \n\nThank you for joining with us.`;
+  
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: `Welcome to SUPERSHOP`,
+      message: message,
+    });
+  } catch (err) {
+    console.log(err.message);
+  }
+
   sendToken(user, 201, res);
 });
 
@@ -179,14 +194,16 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
 // update User Profile
 exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
-  const newUserData = {
-    name: req.body.name,
-    email: req.body.email,
-  };
-
-  if (req.body.avatar !== "") {
-    const user = await User.findById(req.user.id);
-
+  const user = await User.findById(req.user.id);
+  if(req.body.name)
+  {
+    user.name=req.body.name;
+  }
+  if(req.body.email)
+  {
+    user.email=req.body.email;
+  }
+  if (req.body.avatar ) {
     const imageId = user.avatar.public_id;
 
     await cloudinary.v2.uploader.destroy(imageId);
@@ -197,18 +214,13 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
       crop: "scale",
     });
 
-    newUserData.avatar = {
+    user.avatar = {
       public_id: myCloud.public_id,
       url: myCloud.secure_url,
     };
   }
-
-  const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
-    new: true,
-    runValidators: true,
-    useFindAndModify: false,
-  });
-
+  
+  await user.save();
   res.status(200).json({
     success: true,
   });

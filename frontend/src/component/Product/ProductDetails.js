@@ -19,17 +19,17 @@ import {
   DialogTitle,
   Button,
 } from "@material-ui/core";
-// import {Redirect } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
 import {FaCartPlus } from "react-icons/fa";
-// import { MdFlashOn } from "react-icons/md";
+import { MdFlashOn } from "react-icons/md";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  // const navigate = useNavigate();
+  const history= useHistory();
 
 
   const { product, loading, error } = useSelector(
@@ -73,11 +73,11 @@ const ProductDetails = ({ match }) => {
 
 
   //buy product at add to cart
-  // const buyProductHandler = () => {
-  //   dispatch(addItemsToCart(match.params.id, quantity));
-  //   alert.success("Item Added To Cart");
-  //   return <Redirect to="/Cart"/>;
-  // };
+  const buyProductHandler = () => {
+    dispatch(addItemsToCart(match.params.id, quantity));
+    alert.success("Item Added To Cart");
+    history.push("/Cart");
+  };
 
   const submitReviewToggle = () => {
     open ? setOpen(false) : setOpen(true);
@@ -163,13 +163,13 @@ const ProductDetails = ({ match }) => {
                   </button>
 
                   {/* buy wala is not working it is working like add product */}
-                  {/* <button
+                  <button
                     // className="rounded-filled-btn buy-btn"
                     disabled={product.Stock < 1 ? true : false}
                     onClick={buyProductHandler}
                   >
                     <MdFlashOn /> Buy Now
-                  </button> */}
+                  </button>
                 </div>
 
                 <p>
