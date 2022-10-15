@@ -78,8 +78,10 @@ const Products = ({ match }) => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>
-
+      <div class="flex-container">
           <div className="filterBox">
+            <h4>Filters</h4>
+
             <div className="price-filter">
               <h2>Price</h2>
 
@@ -141,6 +143,7 @@ const Products = ({ match }) => {
                 <option value="1">1★ & above</option>
               </select>
             </div>
+          </div>
           </div>
           {resultPerPage < count && (
             <div className="paginationBox">

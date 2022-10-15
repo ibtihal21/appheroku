@@ -76,7 +76,8 @@ const ProductDetails = ({ match }) => {
   const buyProductHandler = () => {
     dispatch(addItemsToCart(match.params.id, quantity));
     alert.success("Item Added To Cart");
-    history.push("/Cart");
+    // IT WILL GOES TO ADDRESS PAGE NOT IN CART
+    history.push("/login?redirect=shipping");
   };
 
   const submitReviewToggle = () => {
@@ -120,7 +121,7 @@ const ProductDetails = ({ match }) => {
       ) : (
         <Fragment>
           <MetaData title={`${product.name} -- SUPERSHOP`} />
-          <div className="ProductDetails">
+        <div className="ProductDetails">
             <div>
               <Carousel>
                 {product.images &&
@@ -133,9 +134,27 @@ const ProductDetails = ({ match }) => {
                     />
                   ))}
               </Carousel>
-            </div>
+             
+            <div className="actions">
+                  <button
+                    className="cart-btn"
+                    disabled={product.Stock < 1 ? true : false}
+                    onClick={addToCartHandler}
+                  >
+                     <FaCartPlus />Add to Cart
+                  </button>
 
-            <div>
+                  {/* buy wala is not working it is working like add product */}
+                  <button
+                    className="buy-btn"
+                    disabled={product.Stock < 1 ? true : false}
+                    onClick={buyProductHandler}
+                  >
+                    <MdFlashOn /> Buy Now
+                  </button>
+                  </div>
+                </div>
+          <div>
               <div className="detailsBlock-1">
                 <h2>{product.name}</h2>
                 <p>Product # {product._id}</p>
@@ -155,23 +174,7 @@ const ProductDetails = ({ match }) => {
                     <input readOnly type="number" value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div>
-                  <button
-                    disabled={product.Stock < 1 ? true : false}
-                    onClick={addToCartHandler}
-                  >
-                     <FaCartPlus />Add to Cart
-                  </button>
-
-                  {/* buy wala is not working it is working like add product */}
-                  <button
-                    // className="rounded-filled-btn buy-btn"
-                    disabled={product.Stock < 1 ? true : false}
-                    onClick={buyProductHandler}
-                  >
-                    <MdFlashOn /> Buy Now
-                  </button>
-                </div>
-
+                 </div>
                 <p>
                   Status:
                   <b className={product.Stock < 1 ? "redColor" : "greenColor"}>

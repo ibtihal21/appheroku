@@ -18,6 +18,49 @@
     border: 1px solid white;
   }
   
+  /* newly added */
+  .actions .cart-btn {
+    margin-left:2rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 171, 36);
+    color: aliceblue;
+    border: none;
+    font: 500 0.7vmax "Roboto";
+    border-radius: 20px;
+    padding: 0.6vmax 2vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+    }  
+  .actions .buy-btn {
+    margin-left: 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--footerColor);
+    border: none;
+    background-color: tomato;
+    font: 500 0.7vmax "Roboto";
+    border-radius: 20px;
+    padding: 0.6vmax 2vmax;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+  }
+  .actions .buy-btn:hover {
+    background-color: rgb(197, 68, 45);
+    transform: scale(1.1);
+  }
+  .actions .cart-btn:hover {
+    background-color: rgb(242, 197, 32);
+    transform: scale(1.1);
+  }
   .ProductDetails > div:last-child {
     align-items: flex-start;
   }
@@ -134,6 +177,8 @@
     cursor: pointer;
     transition: all 0.5s;
     outline: none;
+    text-transform: uppercase;
+
   }
   .submitReview:hover {
     background-color: rgb(197, 68, 45);

@@ -8,33 +8,63 @@
   text-align: center;
 }
 
-.filterBox .price-filter {
+.flex-container {
+  display: flex;
+  margin-top: 70px;
+}
+.flex-container:hover{
+  color: blue;
+
+}
+.flex-container .filterBox{
+  background-color: #f1f1f1;
+  margin: 20px;
+  padding: 30px;
+  font-size: 30px;
+  margin-left: 40px;
+}
+
+.filterBox > h4 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  /* border-bottom: 1px solid var(--lightGrayColor); */
+}
+
+.filter-box .price-filter {
   padding: 0.5rem 1rem;
 
   border-bottom: 1px solid var(--lightGrayColor);
 }
 
-.filterBox .price-filter h2 {
+.price-filter > h2 {
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
   text-align: left;
 }
 
-.filterBox .price-filter .price-range-input {
+.filter-box .price-filter .price-range-input {
   width: 100%;
-  
+
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.filterBox .price-filter .price-range-input > select {
-  margin: 0.5rem 0;
+.filter-box .price-filter .price-range-input > select {
+  margin-left: 2%;
+}
+.flex-container .price-filter .price-range-input > span {
+  margin:0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .filterBox .rating-filter {
-  padding: 1rem 1rem;
+  padding: 1rem 0rem;
 }
 
 .rating-filter h2 {
@@ -43,11 +73,13 @@
   text-transform: uppercase;
   text-align: left;
 
+
 }
 
 .filterBox .rating-filter > select {
   margin: 0.5rem 0;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +92,7 @@
   display: flex;
   justify-content: center;
   margin: 6vmax;
+  margin-top: 5px;
 }
 
 .pagination {
@@ -114,7 +147,8 @@
 }
 
 .categoryBox {
-  padding: 0%;
+  padding:0%;
+  margin-top: 10px;
 }
 
 .categoryBox h2 {
@@ -122,6 +156,7 @@
   font-weight: 500;
   text-transform: uppercase;
   text-align: left;
+  
 
 }
 

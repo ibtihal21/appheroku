@@ -95,7 +95,7 @@ const Cart = ({ history }) => {
               </div>
               <div></div>
               <div className="checkOutBtn">
-                <button onClick={checkoutHandler}>Check Out</button>
+                <button onClick={checkoutHandler}>PLACE ORDER</button>
               </div>
             </div>
           </div>
