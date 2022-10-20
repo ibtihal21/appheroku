@@ -26,15 +26,22 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
-  const message = `Hello ${user.name},
-    \nWe're glad you're here! Check out our product collection and enjoy shopping.
-    \n\nThank you for joining with us.`;
+  const message = 
+  // `Hello ${user.name},
+  //   \nWe're glad you're here! Check out our product collection and enjoy shopping.
+  //   \n\nThank you for joining with us.`;
+
+    `Hey ${user.name} ! Welcome to our store!
+    \nThank you for creating a supershop account.
+    \nWe are more than happy to have you on board.
+
+    \n\nThank you for joining with us.`
   
 
   try {
     await sendEmail({
       email: user.email,
-      subject: `Welcome to SUPERSHOP`,
+      subject: `Welcome to Supershop`,
       message: message,
     });
   } catch (err) {
@@ -108,7 +115,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   try {
     await sendEmail({
       email: user.email,
-      subject: `Ecommerce Password Recovery`,
+      subject: `Supershop Password Recovery`,
       message,
     });
 
