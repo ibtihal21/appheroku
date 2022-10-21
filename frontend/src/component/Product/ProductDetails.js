@@ -75,7 +75,7 @@ const ProductDetails = ({ match }) => {
   //buy product at add to cart
   const buyProductHandler = () => {
     dispatch(addItemsToCart(match.params.id, quantity));
-    alert.success("Item Added To Cart");
+    alert.success("Write Shipping Details");
     // IT WILL GOES TO ADDRESS PAGE NOT IN CART
     history.push("/login?redirect=shipping");
   };
