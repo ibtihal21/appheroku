@@ -111,6 +111,7 @@ const UpdateProfile = ({ history }) => {
                 </div>
 
                 <div id="updateProfileImage">
+                <h4>*Image size must be less than 500kb</h4>
                   <img src={avatarPreview} alt="Avatar Preview" />
                   <input
                     type="file"
